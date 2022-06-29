@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" stylesheets="@gameOver.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GameOverController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="333.0" layoutY="478.0" prefHeight="290.0" prefWidth="700.0" AnchorPane.leftAnchor="333.0" AnchorPane.rightAnchor="333.0">
+         <children>
+            <Label fx:id="scoreLabel" text="You got a total of 0 points" textFill="WHITE">
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="OpenDyslexicAlta" size="20.0" />
+               </font>
+            </Label>
+            <Button fx:id="playAgainButton" mnemonicParsing="false" onAction="#playAgain" prefHeight="42.0" prefWidth="245.0" text="Play Again" textFill="#4b6beb">
+               <VBox.margin>
+                  <Insets bottom="10.0" top="15.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="goToLeaderboard" layoutX="238.0" layoutY="123.0" mnemonicParsing="false" onAction="#goToLeaderBoard" prefHeight="42.0" prefWidth="245.0" text="Show LeaderBoard" textFill="#4b6beb">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button layoutX="221.0" layoutY="131.0" mnemonicParsing="false" onAction="#backToMainMenu" prefHeight="42.0" prefWidth="245.0" text="Back to Main Menu" textFill="#4b6beb">
+               <font>
+                  <Font size="16.0" />
+               </font></Button>
+         </children>
+      </VBox>
+      <Label layoutX="654.0" layoutY="146.0" text="Ka Pai!" textFill="#9e3c07">
+         <font>
+            <Font name="OpenDyslexicAlta" size="22.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="306.0" fitWidth="338.0" layoutX="575.0" layoutY="186.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../media/trophy.png" />
+         </image>
+      </ImageView>
+      <ListView fx:id="correctWords" layoutX="16.0" layoutY="231.0" prefHeight="306.0" prefWidth="524.0" stylesheets="@gameOver.css" AnchorPane.leftAnchor="16.0">
+         <styleClass>
+            <String fx:value="list-cell" />
+            <String fx:value="list-view" />
+         </styleClass>
+      </ListView>
+      <ListView fx:id="incorrectWords" layoutX="826.0" layoutY="231.0" prefHeight="306.0" prefWidth="524.0" stylesheets="@gameOver.css" AnchorPane.rightAnchor="16.0" />
+      <Label layoutX="237.0" layoutY="204.0" prefHeight="38.0" text="Correct">
+         <font>
+            <Font name="OpenDyslexicAlta" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="1037.0" layoutY="204.0" text="Incorrect">
+         <font>
+            <Font name="OpenDyslexicAlta" size="21.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="102.0" fitWidth="405.0" layoutX="481.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../media/gameOver.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

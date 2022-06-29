@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.NewGameController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="260.0" layoutY="229.0" prefHeight="523.0" prefWidth="846.0" AnchorPane.leftAnchor="260.0" AnchorPane.rightAnchor="260.0">
+         <children>
+            <Label fx:id="wordNumText" text="Word 1 of 5" textFill="WHITE">
+               <VBox.margin>
+                  <Insets bottom="10.0" top="70.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="OpenDyslexicAlta" size="22.0" />
+               </font>
+            </Label>
+            <TextField fx:id="userSpelling" maxHeight="-Infinity" maxWidth="-Infinity" onAction="#markWord" prefHeight="35.0" prefWidth="500.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <font>
+                  <Font size="19.0" />
+               </font></TextField>
+            <HBox alignment="TOP_CENTER" prefHeight="46.0" prefWidth="846.0">
+               <children>
+                  <Button fx:id="aMacron" mnemonicParsing="false" onAction="#addMacron" prefHeight="30.0" prefWidth="40.0" text="ā" textFill="#4b6beb">
+                     <font>
+                        <Font size="19.0" />
+                     </font></Button>
+                  <Button fx:id="eMacron" mnemonicParsing="false" onAction="#addMacron" prefHeight="30.0" prefWidth="40.0" text="ē" textFill="#4b6beb">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="19.0" />
+                     </font></Button>
+                  <Button fx:id="iMacron" mnemonicParsing="false" onAction="#addMacron" prefHeight="30.0" prefWidth="40.0" text="ī" textFill="#4b6beb">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="19.0" />
+                     </font></Button>
+                  <Button fx:id="oMacron" mnemonicParsing="false" onAction="#addMacron" prefHeight="30.0" prefWidth="40.0" text="ō" textFill="#4b6beb">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="19.0" />
+                     </font></Button>
+                  <Button fx:id="uMacron" mnemonicParsing="false" onAction="#addMacron" prefHeight="30.0" prefWidth="40.0" text="ū" textFill="#4b6beb">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="19.0" />
+                     </font></Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <Button fx:id="skipButton" mnemonicParsing="false" onAction="#skipWord" prefHeight="42.0" prefWidth="245.0" text="Skip Word" textFill="#4b6beb">
+               <VBox.margin>
+                  <Insets top="25.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Label fx:id="feedbackText" textFill="#fdfeff">
+               <font>
+                  <Font name="OpenDyslexicAlta" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="secondLetter" textFill="WHITE">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="OpenDyslexicAlta" size="30.0" />
+               </font>
+            </Label>
+            <FlowPane columnHalignment="CENTER" maxHeight="172.0" maxWidth="800.0" minHeight="120.0" minWidth="200.0" prefHeight="172.0" prefWidth="800.0">
+               <children>
+                  <Label fx:id="numOfLettersLabel" alignment="TOP_CENTER" maxHeight="400.0" maxWidth="800.0" minHeight="63.0" minWidth="400.0" prefHeight="188.0" prefWidth="800.0" textAlignment="CENTER" textFill="#0a5df0d1" wrapText="true">
+                     <font>
+                        <Font name="OpenDyslexicAlta" size="40.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+         </children>
+      </VBox>
+      <Slider fx:id="voiceSpeedSlider" blockIncrement="0.1" layoutX="39.0" layoutY="681.0" max="1.5" min="0.5" prefHeight="33.0" prefWidth="140.0" value="1.0" />
+      <Button fx:id="playAgainButton" layoutX="182.0" layoutY="678.0" mnemonicParsing="false" onAction="#repeatWord" text="Repeat Word" textFill="#4b6beb" />
+      <Label fx:id="scoreCount" layoutX="14.0" layoutY="14.0" text="Words Correct: 0/5" textFill="WHITE">
+         <font>
+            <Font name="OpenDyslexicAlta" size="21.0" />
+         </font></Label>
+      <Label layoutX="990.0" layoutY="697.0" text="Hit ENTER to check your word" textFill="WHITE">
+         <font>
+            <Font name="OpenDyslexicAlta" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="90.0" layoutY="720.0" text="1.00x" textFill="WHITE">
+         <font>
+            <Font name="OpenDyslexicAlta" size="17.0" />
+         </font></Label>
+      <Label layoutX="152.0" layoutY="720.0" prefHeight="24.0" prefWidth="48.0" text="1.5x" textFill="WHITE">
+         <font>
+            <Font name="OpenDyslexicAlta" size="18.0" />
+         </font></Label>
+      <Label layoutX="30.0" layoutY="720.0" text="0.5x" textFill="WHITE">
+         <font>
+            <Font name="OpenDyslexicAlta" size="18.0" />
+         </font></Label>
+      <ImageView fitHeight="150.0" fitWidth="555.0" layoutX="406.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../media/KemuKupuTitle.png" />
+         </image>
+      </ImageView>
+      <ProgressBar fx:id="timeProgressBar" layoutX="1007.0" layoutY="357.0" opacity="0.0" prefHeight="54.0" prefWidth="200.0" progress="1.0" rotate="-90.0" />
+      <Label fx:id="multiplyLabel" layoutX="1068.0" layoutY="229.0" opacity="0.0" text="2.0X" textFill="WHITE">
+         <font>
+            <Font name="OpenDyslexicAlta" size="33.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

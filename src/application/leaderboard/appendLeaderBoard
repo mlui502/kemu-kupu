@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Function inputs the word into a leaderboard, and sorts it.
+echo "$1" >> src/application/leaderboard/leaderBoard.txt
+sort -nr src/application/leaderboard/leaderBoard.txt >> src/application/leaderboard/temp.txt
+cp src/application/leaderboard/temp.txt src/application/leaderboard/leaderBoard.txt
+> src/application/leaderboard/temp.txt
+

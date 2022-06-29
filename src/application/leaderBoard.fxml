@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" stylesheets="@gameOver.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GameOverController">
+   <children>
+      <ListView fx:id="scoreBoard" layoutX="334.0" layoutY="137.0" prefHeight="374.0" prefWidth="699.0" stylesheets="@gameOver.css" />
+      <VBox fx:id="summaryLeaderBoard" alignment="TOP_CENTER" layoutX="491.0" layoutY="547.0" prefHeight="65.0" prefWidth="385.0">
+         <children>
+            <Button fx:id="backToSummary" mnemonicParsing="false" onAction="#backToSummary" prefHeight="42.0" prefWidth="245.0" text="Back to Summary" textFill="#4b6beb">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <VBox fx:id="mainMenuLeaderBoard" alignment="TOP_CENTER" disable="true" layoutX="466.0" layoutY="549.0" prefHeight="127.0" prefWidth="436.0" visible="false">
+         <children>
+            <Button fx:id="backToMainBtn" mnemonicParsing="false" onAction="#backToMainMenu" prefHeight="42.0" prefWidth="245.0" text="Back to Main Menu" textFill="#4b6beb">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="clearLeaderboard" layoutX="106.0" layoutY="10.0" mnemonicParsing="false" onAction="#clearLeaderboard" prefHeight="42.0" prefWidth="245.0" text="Clear Stats" textFill="#4b6beb">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <ImageView fitHeight="127.0" fitWidth="395.0" layoutX="486.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../media/leaderBoard.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
